@@ -42,3 +42,44 @@ for i in nivesh.values():
 #write a python program to sort a dictionary by key.
 key = {96:"a",177:"z",50:"b",12:"d"}
 print(sorted(key.keys()))
+
+
+#write a program to find max and min in a set.
+name = (1,1,2,3,64,57,3,7)
+print(max(name))
+print(min(name))
+
+#write a program to find common elements in three list sets.
+a = {1,2,3,4,5}
+b = {9,8,7,6,5}
+c = {2,4,6,8,5}
+print(a.intersection(b).intersection(c))
+
+#write a program to find difference between two sets.
+x = {1,2,3,4,5}
+z = {9,8,7,6,5}
+print(x.difference(z))
+
+#write a python program to remove an items from a set if is present in the set.
+k = {2,4,56,93,0,3}
+print(k)
+while k:
+    p = input("if you want to remove any number please type / exit : ")
+    if p.lower() == "exit":
+            break
+else:
+    if p.isdigit():
+        p = int(p)
+        if p == k:
+            k.remove(p)
+            print("Your given number",p,"is remove")
+        else:
+            print("The given is not present in data")
+    else:
+        print("The given you have mention is not a Numrical")
+print(k)
+
+#wtite a program to check if a set is a subset of another set.
+w = {1.2,3,4,5}
+y = {2,3,4}
+print(y.issubset(w))
