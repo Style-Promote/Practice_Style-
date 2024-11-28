@@ -83,3 +83,42 @@ print(k)
 w = {1.2,3,4,5}
 y = {2,3,4}
 print(y.issubset(w))
+
+#funcrions paramenter and arguments 1
+def nivesh(x,y):
+    print(x+y)
+nivesh(98,56)
+
+#funcrions paramenter and arguments2
+def nivesh(*name):
+    print("hello, my name is ",name[1])
+nivesh("nivesh","kumar","singh")
+
+#return statements and Recursion in python
+def nivesh():
+    return("only this value is return")
+print(nivesh())
+
+#Recursion in python 1
+#In revesion time create and program to take the user intput and factorise 
+def fact(n):
+    if n == 1:
+        return 1
+    else:
+        return n * fact(n-1)
+print(fact(5))
+
+#Recursion in python 2
+def factorial(n):
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers.")
+    elif n == 0:
+        return 1
+    else:
+        return n * factorial(n  - 1)
+
+user_input = int(input("Give the number to factorize: "))
+result = factorial(user_input)
+print("The factorial of {user_input} is {result}")
+
+
