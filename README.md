@@ -121,4 +121,50 @@ user_input = int(input("Give the number to factorize: "))
 result = factorial(user_input)
 print("The factorial of {user_input} is {result}")
 
+#lambda
+a = lambda b : b*5
+print(a(4))
+
+x = 10 # global variable
+def my_function():
+                #  if you want to change the global x value the use (global x ↵ x = 9)
+    y = 5 # local variable
+    print(y)   
+my_function()
+print(x)
+print(y) # this will cause an error because y is a local variable
+# and is not accessible outside of the function
+
+# write a function to find maximum of three numbers in python.
+a = int(input("1st :- "))
+b = int(input("2nd :- "))
+c = int(input("3rd :- "))
+
+def nivesh (a,b,c):
+    if a >= b and a >= c:
+        return a
+    elif b >= a and b >= c:
+        return b
+    else:
+        return c
+print(nivesh(a,b,c))
+
+#write a python function to create and a list where the value are square of number between 1 and 30.
+def square ():
+    return[i*i for i in range(1,31)]
+
+print(square())
+
+#Write a python function that taken a number as a parameter and check if the number is prime or not.g n  knjkl
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+prime_numbers = [num for num in range(1, 31) if is_prime(num)]
+print("Prime numbers between 1 and 30:", prime_numbers)
+
 
