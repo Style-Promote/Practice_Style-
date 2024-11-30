@@ -167,4 +167,60 @@ def is_prime(num):
 prime_numbers = [num for num in range(1, 31) if is_prime(num)]
 print("Prime numbers between 1 and 30:", prime_numbers)
 
+# 2 method
+def add(numbers):
+    if len(numbers) == 1:  # Base case for recursion
+        return numbers[0]  # If the list has only one number, return that number.
+    else:  # Recursive case
+        return numbers[0] + add(numbers[1:])  
+        # Add the first number in the list to the result of the function
+        # called with the rest of the list (excluding the first number).
+
+print(add([12, 4, 5, 6, 7, 8]))
+# Call the function with a list of numbers and print the result.
+
+#write a python program to solve the fibonacci sequences using Recursion.
+def fibo(num):
+    if num == 1:
+        return 0  # The first Fibonacci number is 0
+    elif num == 2:
+        return 1  # The second Fibonacci number is 1
+    else:
+        # Recursive case: The Fibonacci number is the sum of the previous two
+        return fibo(num - 1) + fibo(num - 2)
+
+# Get the 7th Fibonacci number
+print(fibo(7))
+
+import datetime
+print(datetime.datetime.now())     #module datetime
+
+
+# module
+#datetime
+
+import datetime
+print(datetime.datetime.now())
+x=datetime.datetime(2002,10,27)
+print(x.strftime("%A")) # try (a-z) or (A-Z).
+
+#random
+import random
+print(random.randint(7,70))
+z=["HEAD","TAILS"]
+print(random.choice(z))
+
+#math
+import math
+print(max(1,78,56))
+print(pow(4,9))
+print(math.sqrt(89754675)) #.
+print(abs(-78))
+print(math.floor(78.3)) #.
+print(math.ceil(78.5)) #.
+
+#create module also watch #youtube Automate with Rakesh ((((((((Alias)))))))
+import noted as m2 #m2=Alias
+m2.greeting ("nivesh")
+![image](https://github.com/user-attachments/assets/705ddc92-2133-48f8-92c3-bff008ff8521)
 
