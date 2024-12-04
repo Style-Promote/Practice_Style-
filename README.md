@@ -224,3 +224,47 @@ import noted as m2 #m2=Alias
 m2.greeting ("nivesh")
 ![image](https://github.com/user-attachments/assets/705ddc92-2133-48f8-92c3-bff008ff8521)
 
+import numpy
+d=numpy.array([10,20,89,90])
+print(d[0:2])
+
+import numpy as ni
+d=ni.array([[10,20,89,90],[50,81,91,78]])
+print(d[1:3,1:3])
+
+import numpy as ni
+d=ni.array([[10,20,89,90],[50,81,91,78]])
+print([d[1,1:3],d[0,1:3]])
+
+import numpy as ni
+d=ni.array([[10,20,89,90],[50,81,91,78]])
+print([d[1,1:3],d[0,1:3]])
+print(ni.shape(d))      # shape
+print(ni.size(d))       #size
+print(ni.ndim(d))       #number dimension
+print(d.dtype)      #how many bit will store your data
+
+import numpy as nv
+a = [[56,89,78,56],[45,58,56,78]]
+arr = nv.array(a)
+print(nv.array(a))
+print(arr.shape)
+print(len(a))
+print(arr.ndim)
+print(arr.size)
+print(arr.dtype)
+print(type(arr))
+print(arr.astype(float))
+
+import numpy as nv
+a = [[56,89,78,56],[45,58,56,78]]
+arr = nv.array(a)
+print(nv.array(a))
+print(arr.shape)   #row and columns
+print(len(a))      #output 2 because [ ] ,[ ] nested
+print(arr.ndim)    #number dimension
+print(arr.size)    # output 8 elements
+print(arr.dtype)    # data types
+print(type(arr))     # types of variable
+print(arr.astype(float))    #types convert
+
