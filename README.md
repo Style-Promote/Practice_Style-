@@ -268,3 +268,83 @@ print(arr.dtype)    # data types
 print(type(arr))     # types of variable
 print(arr.astype(float))    #types convert
 
+#mathmatics operation and funtions on arrays.
+
+import numpy as np
+# Correctly define 2D arrays
+arr1 = np.array([[20, 40], [50, 60]])
+arr2 = np.array([[50, 60], [70, 80]])
+arr3 = np.array([5])
+# Perform mathematical operations
+print("Addition:\n", np.add(arr1, arr2))       # Element-wise addition
+print("Subtraction:\n", np.subtract(arr1, arr2))  # Element-wise subtraction
+print("Division:\n", np.divide(arr1, arr2))   # Element-wise division
+print("power:\n", np.power(arr1,arr3))        # ELements-wise power
+
+# concatenate
+import numpy as np
+arr1 = np.array([[30, 40],[50,80]])
+arr2 = np.array([[5, 5],[40,60]])
+print(np.concatenate([arr1, arr2]))
+print(np.concatenate([arr1,arr2],axis=1))
+print(np.concatenate([arr1,arr2],axis=0))
+print(np.hstack([arr1,arr2]))       #horizonatal Concatenate
+print(np.vstack([arr1,arr2]))       #vertical concatenate
+
+a =np.array([56,58,96,87,74])
+print(np.array_split(a,3))        #you can also use 2d data
+
+import numpy as ni
+a=ni.array([50,12,56,75,25])
+print(a)
+print(ni.append(a,56))
+h = ([56,89,73])
+print(ni.append(a,h))
+print(a)
+print(ni.insert(a,3,56))
+print(ni.delete(a,2))
+s = ni.detete(a,5)
+print(a)                #every time you just add and delete something in the array the will be not futher changes in the array you have to create like that s = ni.detete(a,5)
+
+import numpy as xp
+a = xp.array([56,85,89,57,44])
+print(xp.sort(a))
+print(xp.where(a == 44))
+print(xp.where(a % 2 == 0))
+print(xp.searchsorted(a,1))
+
+import numpy as xp
+a = xp.array([35,85,89,57,90])
+print(xp.sort(a))
+print(xp.where(a == 44))
+print(xp.where(a % 2 == 0))
+print(xp.searchsorted(a,1))
+print(a>40)
+print(a[a>40])
+print(a[a%2==0])
+print(a[a%2==1])
+
+import numpy as xp
+a = xp.array([35,85,89,57,90])
+print(xp.sum(a))
+print(xp.max(a))
+print(xp.min(a))
+print(xp.size(a))
+print(xp.mean(a))
+print(xp.median(a))
+print(xp.cumsum(a))
+
+import numpy as xp
+p = xp.array([35,85,89,57,90])
+q = xp.array([5,6,8,9,2])
+
+c= xp.cumprod([p,q],axis=0)
+print(c)
+print(c[1].sum())
+
+import numpy as xp
+import statistics as pp
+p = xp.array([35,85,89,57,90])
+print(pp.mode(p))
+
+
