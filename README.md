@@ -346,5 +346,45 @@ import numpy as xp
 import statistics as pp
 p = xp.array([35,85,89,57,90])
 print(pp.mode(p))
+print(xp.std(p))
+print(xp.var))         #variantions double od standard deviation
+
+import numpy as np
+import statistics as st
+price = [700,600,500,400,300]
+sales = [80,60,50,40,20]
+print(np.corrcoef([price,sales]))        1 is directly proportion / -1 is inversaly proportion / 0 no relation
+
+Pandas
+import pandas as pd
+data={"Name":["Nivesh","kumar","style"],
+    "Age":[20,21,22],
+    "Salary":[4000,5000,6000]}
+print(pd.DataFrame(data))
+
+import pandas as pd
+data = pd.read_csv("C:/Users/nives/OneDrive/Desktop/New folder/Book.csv", encoding='utf-8')
+print(data)
+
+import pandas as pd
+data = pd.read_excel("C:/Users/nives/OneDrive/Desktop/New folder/Book.xlsx")
+print(data)
+
+import pandas as pd
+data = pd.read_excel("C:/Users/nives/OneDrive/Desktop/New folder/Book.xlsx")
+print(data.info())
+
+import pandas as pd
+data = pd.read_excel("C:/Users/nives/OneDrive/Desktop/New folder/Book.xlsx")
+print(data.describe())
+
+import pandas as pd
+data = pd.read_excel("C:/Users/nives/OneDrive/Desktop/New folder/Book.xlsx")
+print(data.isnull())
+
+import pandas as pd
+data = pd.read_excel("C:/Users/nives/OneDrive/Desktop/New folder/Book.xlsx")
+print(data.isnull().sum())
+
 
 
