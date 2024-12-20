@@ -96,7 +96,7 @@ nivesh("nivesh","kumar","singh")
 
 #return statements and Recursion in python
 def nivesh():
-    return("only this value is return")
+    return("only this value is return")            #functions
 print(nivesh())
 
 #Recursion in python 1
@@ -414,5 +414,36 @@ data ["Job Title"] = data ["Job Title"].fillna("Clerk")        #fillna = fill Na
 print(data)
 
 
+import pandas as pd
+filetype =pd.read_excel("C:/Users/nives/OneDrive/Desktop/python data analytics file/ESD.xlsx")
+print (filetype)
+filetype.loc[filetype["Bonus %"] == 0, "GetBonus %"] = "No Bonus"
+filetype.loc[filetype["Bonus %"] > 0, "GetBonus %"] = "Bonus"            #create a new columns & also if use.
+print(filetype)
+print(filetype.head(10))
+
+import pandas as pd
+data = pd.read_excel("practice_1.xlsx")                #use in jupyter note book & the file practice_1 is avilable on local file where jupyter is connceted
+print(data)
+data["Full Name"]=data["Name"].str.capitalize() + " " + data["Sername"].str.capitalize()
+print(data)
+
+import pandas as pd
+#dictonary
+data = {
+    "Months":[
+        "January","February","March","April","May",
+        "June","July","August","September","October",
+        "November","December"
+    ]
+}
+#Dataframe
+a = pd.DataFrame(data)
+print(a)
+#function
+def extract(value):
+    return value[0:3]
+a["Short Months"] = a["Months"].map(extract)            #data trim like january = jan
+print(a)
 
 
