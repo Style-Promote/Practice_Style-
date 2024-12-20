@@ -446,4 +446,9 @@ def extract(value):
 a["Short Months"] = a["Months"].map(extract)            #data trim like january = jan
 print(a)
 
+gb=dbz.groupby("Department").agg({"Gender":"count"})
+print(gb)                                                #for counting gender in each department
+
+gb=dbz.groupby(["Department","Gender"]).agg({"EEID":"count"})
+print(gb)                                                #For counting gender in each department with gender male and female base
 
