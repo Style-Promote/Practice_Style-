@@ -452,3 +452,7 @@ print(gb)                                                #for counting gender in
 gb=dbz.groupby(["Department","Gender"]).agg({"EEID":"count"})
 print(gb)                                                #For counting gender in each department with gender male and female base
 
+import pandas as pd
+dbz=pd.read_excel("ESD.xlsx")
+data=dbz.groupby(["Country"]).agg({"Age":"mean"})         #mean,avg,max,
+print(data)
