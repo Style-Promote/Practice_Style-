@@ -386,5 +386,33 @@ import pandas as pd
 data = pd.read_excel("C:/Users/nives/OneDrive/Desktop/New folder/Book.xlsx")
 print(data.isnull().sum())
 
+import pandas as pd  # Use pandas for Excel file handling
+
+# File path
+filetype = "C:/Users/nives/OneDrive/Desktop/python data analytics file/Book.xlsx"
+
+# Read the Excel file
+data = pd.read_excel(filetype)
+print("Mean Salary:", data["Salary"].mean())
+
+
+import pandas as pd
+
+# Correct the file path (assuming the path is case-sensitive)
+file_path = "C:/Users/nives/OneDrive/Desktop/New folder/Book.xlsx"
+
+# Correct the file path (assuming the path is case-sensitive)
+file_path = "C:/Users/nives/OneDrive/Desktop/New folder/Book.xlsx"
+
+# Read the Excel file
+data = pd.read_excel(file_path)
+
+# Remove duplicate rows
+data = data.drop_duplicates()            #use this on varriable or print
+
+data ["Job Title"] = data ["Job Title"].fillna("Clerk")        #fillna = fill NaN means blanck fill with data.
+print(data)
+
+
 
 
