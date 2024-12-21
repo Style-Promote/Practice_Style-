@@ -519,11 +519,47 @@ print(df)
 print()
 print(df.pivot(index="keys", columns="name", values="house"))                    #pivot with index and columns & values
 
+import pandas as pd
+df = pd.DataFrame({
+    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve'],
+    'Math': [90, 85, 78, 92, 88],
+    'Physics': [88, 92, 84, 91, 89],
+    'Chemistry': [78, 89, 80, 87, 82],
+    'Biology': [95, 93, 88, 94, 90],
+    'History': [87, 91, 75, 89, 86]
+})
+print(df)
+melt_df = pd.melt(df,id_vars="Name")         #if you want to change new columns name variable us this code in this code  like i take subject Var_name="Subject" / do you want to change value use vlaue_name="book"
+melt_df                # jupyter note you need to print last print(melt_df) you ccan use Melt
 
+import matplotlib.pyplot as plt
+y = [40, 80, 90, 2, 15]
+x = ["A", "B", "C", "D", "E"]
+#colour=["red","pink","green","yellow","white"]
+plt.bar(x, y,color="red")                #if you want to how many things that wiil use ...|) shift+tab a pop-pop show search all
+plt.xlabel("some",fontsize=17)
+plt.ylabel("something")
+plt.title("nivesh")
+plt.show()
 
+import matplotlib.pyplot as plt
+import pandas as pd
+data = pd.read_excel("C:/Users/nives/OneDrive/Desktop/python data analytics file/exp.xlsx")
+df = pd.DataFrame(data)
+plt.bar(df["Payment Mode"],df["Amount"])
+plt.xlabel("some",fontsize=17)
+plt.ylabel("something")
+plt.title("nivesh")
+plt.show()
 
-
-
+import matplotlib.pyplot as plt
+import pandas as pd
+data = pd.read_excel("C:/Users/nives/OneDrive/Desktop/python data analytics file/exp.xlsx")
+df = pd.DataFrame(data)
+grouped_by = df.groupby("Payment Mode")["Amount"].sum()
+print(grouped_by)
+plt.bar(grouped_by.index,grouped_by.values)
+plt.show()
 
 
 
