@@ -456,3 +456,76 @@ import pandas as pd
 dbz=pd.read_excel("ESD.xlsx")
 data=dbz.groupby(["Country"]).agg({"Age":"mean"})         #mean,avg,max,
 print(data)
+
+import pandas as pd
+data1 = {"Emp ID":["E1","E2","E3","E4","E5",],
+         "Name":["Nivesh","Kumar","Singh","Nikita","Ram"],
+         "Age":[20,22,24,18,17]}
+data2 = {"Emp ID":["E1","E2","E3","E6","E8",],
+         "Salary":[20000,25000,16000,18000,12000]}
+df1 = pd.DataFrame(data1)
+df2 = pd.DataFrame(data2)
+print(df1)
+print()        #print() mean nothing but blank
+print(df2)
+print(pd.merge(left=df1, right=df2, on = "Emp ID", how = "left"))            #if main table is left table
+print(pd.merge(left=df1, right=df2, on = "Emp ID", how = "right"))           #if main table is right table
+
+
+#if you want to merge two seprate table with equal columns tittle that called CONCATENATE 
+import pandas as pd
+data1 = {"Emp ID":["E1","E2","E3","E4","E5",],
+         "Name":["Nivesh","Kumar","Singh","Nikita","Ram"],
+         "Age":[20,22,24,18,17]}
+data2 = {"Emp ID":["E6","E7","E8","E9","E10",],
+         "Name":["Nikita","Kumari","Dhangi","Ram","Nath"],
+         "Age":[22,26,25,20,22]}
+df1 = pd.DataFrame(data1)
+df2 = pd.DataFrame(data2)
+
+print(pd.concat([df1,df2]))                #CONCATENATE two table merge
+
+#updata Data
+import pandas as pd
+data1 = {"Emp ID":["E1","E2","E3","E4","E5",],
+         "Name":["Nivesh","Kumar","Singh","Nikita","Ram"],
+         "Age":[20,22,24,18,17]}
+data2 = {"Emp ID":["E1","E2","E3","E4","E5",],
+         "Salary":[20000,25000,16000,18000,12000]}
+df1 = pd.DataFrame(data1)
+df2 = pd.DataFrame(data2)
+df3 = df2.copy()
+df3.loc[0,"Salary"]=25000
+df3.loc[1,"Salary"]=50000
+df3.loc[2,"Salary"]=25000
+df3.loc[3,"Salary"]=16000
+df3.loc[4,"Salary"]=25000
+print(pd.merge(df1,df2))
+print()
+print(pd.merge(df1,df3))
+print(df2.compare(df3))         #compare one data tabel to Another Data table
+print(df2.compare(df3,align_axis =0))
+print(df2.compare(df3,keep_equal= True))
+print(df2.compare(df3,keep_equal= False))
+print(df2.compare(df3,keep_shape= True))
+
+import pandas as pd
+dic = {
+    "keys":["k1","k2","k1","k2"],
+    "name":["Nivesh","Kumar","Singh","Dhangi"],
+    "house":["red","blue","green","pink"]}
+df = pd.DataFrame(dic)
+print(df)
+print()
+print(df.pivot(index="keys", columns="name", values="house"))                    #pivot with index and columns & values
+
+
+
+
+
+
+
+
+
+
+
