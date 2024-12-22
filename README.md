@@ -561,7 +561,31 @@ print(grouped_by)
 plt.bar(grouped_by.index,grouped_by.values)
 plt.show()
 
+import pandas as pd
+import matplotlib.pyplot as plt
+x = ["A","B","C","D"]
+y = [10,50,25,40]
+z = [90,70,52,25]
+plt.plot(x,y,marker="^",linestyle="--")        #if you want to add some new style find SHIFT+TAB
+plt.plot(x,z,color="pink")
+plt.show()
 
+import matplotlib.pyplot as plt
+import numpy as np
+x = np.random.randint(1,20,50)
+y = np.random.randint(10,100,50)
+plt.scatter(x,y,marker = "^",color = "red")
+plt.show()
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.random.randint(1,20,50)
+y = np.random.randint(10,100,50)
+colour=np.random.randint(10,100,50)
+plt.scatter(x,y,marker = "^",c=colour,cmap="viridis",)        #cmap="hot"
+plt.colorbar()
+plt.show()
 
 
 
