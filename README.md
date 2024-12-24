@@ -579,12 +579,20 @@ plt.show()
 
 import matplotlib.pyplot as plt
 import numpy as np
-
 x = np.random.randint(1,20,50)
 y = np.random.randint(10,100,50)
 colour=np.random.randint(10,100,50)
 plt.scatter(x,y,marker = "^",c=colour,cmap="viridis",)        #cmap="hot"
 plt.colorbar()
+plt.show()
+
+import matplotlib.pyplot as plt
+brands = ["Xiaomi", "Vivo", "Samsung", "Realme", "OPPO", "OnePlus", "Apple"]
+share = [20.67,18.22,13.69,13.45,11.71,4.82,4.10]
+colour = ["red","blue","pink","black","green","orange","brown"]
+ex = [0,0,1,0,0,0,0]
+plt.pie(share, labels=brands, colors=colour, explode = ex, shadow=True,autopct ="%f",startangle=90)
+plt.title("Mobile Market Share of India")                    #pie chart
 plt.show()
 
 
