@@ -595,5 +595,49 @@ plt.pie(share, labels=brands, colors=colour, explode = ex, shadow=True,autopct =
 plt.title("Mobile Market Share of India")                    #pie chart
 plt.show()
 
+import matplotlib.pyplot as plt
+name = [4,8,10,12,15,30]
+age = [5,70,30,40,70,40]
+glass =[name,age]
+plt.boxplot(glass)
+plt.show()            #boxplot
+
+import pandas as pd
+import matplotlib.pyplot as plt
+data = pd.read_excel("exp.xlsx")
+df = pd.DataFrame(data)
+plt.hist(df["Amount"], bins=100, color='blue', edgecolor='black')
+plt.show()           #histogram plot
+
+import matplotlib.pyplot as plt
+name = [4,8,10,12,15,30]
+plt.violinplot(name,showmeans=True)
+plt.show()            #Violinplot
+
+import matplotlib.pyplot as plt
+name = [4,8,10,12,15,30]
+plt.stem(name)
+plt.show()            #stemplot
+
+import matplotlib.pyplot as plt
+days = [1,2,3,4,5,6,7]
+nop1 = [40,20,12,32,45,1,4]
+nop2 = [78,89,45,24,6,21,21]
+plt.stackplot(days,nop1,nop2)
+plt.show()            #stackplot
+
+#subplot
+import matplotlib.pyplot as plt
+x = [1,2,5,4,8]
+y = [9,6,3,4,7]
+plt.subplot(1,2,1)
+plt.plot(x,y)
+x = [14,12,13,15,16]
+y = [17,16,18,19,20]
+plt.subplot(1,2,2)
+plt.plot(x,y)
+plt.show()
+
+
 
 
