@@ -638,6 +638,29 @@ plt.subplot(1,2,2)
 plt.plot(x,y)
 plt.show()
 
+import seaborn as sns
+import pandas as pd
+# import matplotlib.pyplot as plt
+data = {"Days":[1,2,3,4],
+        "NOP":[10,56,23,40]}
+df = pd.DataFrame(data)
+print(df)
+sns.lineplot(data=data,x="Days",y="NOP")
+# plt.show()
 
+import seaborn as sns
+import pandas as pd
+data=pd.read_excel("ESD.xlsx")
+print(data)                #seaborn
 
+sns.lineplot(data=data, x="Business Unit", y="Age", hue="Ethnicity",style="Gender")
+
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+data=pd.read_excel("ESD.xlsx")
+print(data)
+color=sns.color_palette("husl")
+sns.lineplot(data=data, x="Business Unit", y="Age", hue="Ethnicity", palette=color)
+plt.show()
 
