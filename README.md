@@ -662,5 +662,42 @@ data=pd.read_excel("ESD.xlsx")
 print(data)
 color=sns.color_palette("husl")
 sns.lineplot(data=data, x="Business Unit", y="Age", hue="Ethnicity", palette=color)
-plt.show()
+plt.show()            #seaborn (lineplot)
 
+import seaborn as sns
+import matplotlib.pyplot as plt
+data=sns.load_dataset("tips")
+print(data)
+sns.barplot(data=data, x="day",y="tip",hue="sex",palette={"Male":"lightblue","Female":"pink"})
+plt.plot()            #seaborn (barplot)
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+data=sns.load_dataset("tips")
+print(data)
+sns.histplot(data=data,x="day",hue="sex",palette={"Male":"lightblue","Female":"red"},kde=True)
+plt.plot()              #seaborn (histplot,histogram)
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+data=sns.load_dataset("titanic")
+# print(data)
+sns.histplot(data=data, x="age",hue="who",kde=True,discrete=True)    #bins=15    #(you can use increase and decrease the data histplot bar)
+plt.plot()            #seaborn (histplot,histogram)
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+data = sns.load_dataset("tips")
+print(data)
+sns.scatterplot(data=data, x="total_bill",y="tip",hue="time",size="size",marker="D")
+plt.plot()            #seaborn (scatterplot)
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+data=pd.read_excel("ESD.xlsx")
+# print(data)
+sns.scatterplot(data=data,x="Age",y="Annual Salary",size="Bonus %",hue="Department")
+plt.legend(bbox_to_anchor=(0.2,0,1.2,1))
+plt.plot()            #seaborn (scatterplot)
