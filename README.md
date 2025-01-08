@@ -701,3 +701,93 @@ data=pd.read_excel("ESD.xlsx")
 sns.scatterplot(data=data,x="Age",y="Annual Salary",size="Bonus %",hue="Department")
 plt.legend(bbox_to_anchor=(0.2,0,1.2,1))
 plt.plot()            #seaborn (scatterplot)
+
+
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+data = pd.read_excel("ESD.xlsx")
+# print(data)
+gp = data.groupby("Department").agg({"Annual Salary":"mean"})
+print(gp)
+sns.heatmap(gp)
+plt.plot()            #seaborn (Heatmap)
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+data = sns.load_dataset("tips")
+print(data)
+sns.countplot(data=data,x="sex",palette={"Male": "lightblue", "Female": "pink"})  #you can also use hue
+plt.show()           #seaborn (countplot)
+
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+data = sns.load_dataset("tips")
+print(data)
+sns.violinplot(data=data,x="total_bill") 
+plt.plot()            #seaborn (violinplot)
+
+import matplotlib.pyplot
+import pandas as pd
+import seaborn as sns
+data = sns.load_dataset("tips")
+sns.pairplot(data)
+plt.plot()            #seaborn (pairplot)
+
+import matplotlib.pyplot
+import pandas as pd
+import seaborn as sns
+data = sns.load_dataset("tips")
+sns.stripplot(data=data, x="day",y="total_bill", hue="sex", dodge=True, jitter=0.3)
+plt.plot()            #seaborn (stripplot)
+
+
+import matplotlib.pyplot
+import pandas as pd
+import seaborn as sns
+data = sns.load_dataset("tips")
+sns.boxplot(data=data,x="day",y="tip")
+plt.plot()           #seaborn (boxplot)
+
+import matplotlib.pyplot
+import pandas as pd
+import seaborn as sns
+data = sns.load_dataset("tips")
+#cat plot stands for categoriral plot
+print(data)
+sns.set_style(style="darkgrid")                #you can use whenever and any graph to change style
+sns.catplot(data=data, x="day", y="tip", hue="sex",kind="bar")        #you can use multiple graph like bar , strip, scatter, 
+plt.show()          #seaborn (catplot)
+
+import matplotlib.pyplot
+import pandas as pd
+import seaborn as sns
+data = sns.load_dataset("tips")
+print(data)
+a = sns.FacetGrid(data, col="time", height=2, hue="sex")
+a.map(sns.barplot, "day", "tip")
+a.add_legend()
+plt.show()           #multiple plot
+
+import matplotlib.pyplot
+import pandas as pd
+import seaborn as sns
+data = sns.load_dataset("tips")
+print(data)
+sns.relplot(data=data,x="tip",y="total_bill",hue="day",col="smoker")    #relational plot
+
+import matplotlib.pyplot
+import pandas as pd
+import seaborn as sns
+data = sns.load_dataset("tips")
+print(data)
+sns.swarmplot(data=data,x="day",y="total_bill",hue="sex")    #swarmplot
+
+import matplotlib.pyplot
+import pandas as pd
+import seaborn as sns
+data = sns.load_dataset("tips")
+print(data)
+sns.kdeplot(data=data,x="total_bill",hue="day",multiple = "stack")    #kdeplot  #multiple = "fill"
