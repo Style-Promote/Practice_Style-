@@ -1,1 +1,71 @@
+# MySQL sample data name called sakila, sys, world,
+
+#Select
+select * from sakila.actor        # To select the Data.
+
+select actor_id, first_name from sakila.actor     # to want specifice coloumn to a data table.
+
+select * from sakila.actor;
+Select actor_id, first_name from sakila.actor;         #Ctrl + Enter	All query executes.        Ctrl + Shift + Enter	To selected query executes.
+
+#Where Clause
+select CountryCode,Name,District from world.city where CountryCode = "AFG";        #use like filter
+
+#And , Or , Not Operations
+#And
+select CountryCode,Name,District from world.city where CountryCode = "AFG" and Name = "kabul";        # Using (AND) to apply multiple filter in a data
+
+#or
+select * from world.city where CountryCode = "AFG" or District like "%Holland%";               # Using (or) operator evaluates each condition separately and                                                                                                         returns a row if at least one condition is true.
+                                                                                                #Wildcards in LIKE:
+                                                                                                  % (Percent Sign): Matches zero or more characters.
+                                                                                                  _ (Underscore): Matches a single character.
+#Not
+select * from world.city where Not CountryCode = "AFG";                                        # Using (Not) to appy coloumns accept your criteria show all data
+
+#Wildcards in LIKE:
+# % (Percent Sign): Matches zero or more characters.
+# _ (Underscore): Matches a single character.
+select * from world.city where District like "Ut_____";
+select * from world.city where District like "%Holland%";            # where you can use multiple way to use this 
+
+#Order by
+select * from sakila.payment order by amount desc;                    #where you can use asc/desc
+
+#limit
+select * from sakila.payment order by amount desc limit 10;          #using limit to find how many rows do you wanted.
+select * from sakila.payment order by amount desc limit 2, 10;        # accept 2 coloumns show all data.
+
+#Between operators
+select * from sakila.payment where amount Between 5 and 10;           # using Between 
+
+#In And Not in operator
+#In
+select * from sakila.payment where amount in (8.99,3.99);
+
+#Not
+select * from sakila.payment where amount Not in (8.99,3.99);
+
+#Greater than(>), Lower than (<), Equal (=), Not Equal (!=),
+select * from sakila.payment where amount < 5;
+select * from sakila.payment where amount > 5;
+select * from sakila.payment where amount = 5;
+select * from sakila.payment where amount != 5;
+
+#Concatenate------------concat()
+select concat("address","address 2","district","city_id","postal_code") as full_address from sakila.address
+
+#Concatenate------------concat_ws()
+select concat_ws(" - ","address","address 2","district","city_id","postal_code") as full_address from sakila.address
+
+
+
+
+
+
+
+
+
+
+
 
