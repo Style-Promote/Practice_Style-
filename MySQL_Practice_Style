@@ -1,1 +1,406 @@
+MY SQL (Structured Query Language)
+MySQL is a relation database management system (RDBMS) developed by oracle that is based on structure query language (SQL).
+What is database?
+A database is an organized collection of structured information, or data.
+What is DBMS?
+Database management systems (DBMS) are software system used to store, retrieve, and run queries on data.
+C-create
+R-read
+U-update
+D-delete
+Types of DBMS?
+DBMS
+	Relational SQL
+	Non-Relational SQL
+What is relational database?
+A relational database is a collection of data items with pre-defined relationships between them, stored in the form of table, rows and columns.
+List of SQL database:
+MySQL
+MariaDB
+Oracle
+PostgreSQL
+MSSQL
+ 
+Download MySQL (help to watch YouTube) 
+What is a database Table?
+Database table is a collection of Rows and Columns that contains relational data.
+
+
+id	name	email	Dob
+1	Nivesh	nivesh@gmail.com
+10-10-2000
+2	kumar	kumar@gmail.com
+11-11-2001
+3	Style	style@gmail.com
+12-12-2002
+			
+
+Schema.
+Create database style
+Use style
+Categories of datatypes.
+String
+Numeric
+Date & Time
+Create table Syntax
+CREATE TABLE table_name
+(
+Column 1 datatype,
+Column 2 datatype,
+Column 3 datatype,
+….
+);
+String Data types
+		CHAR	Size	0-255
+		VARCHAR	Size	0-65535
+		BINARY	Size	
+		VARBINARY	Size	
+		TINYTEXT		255 Characters
+		TEXT	Size	65535
+		MEDIUMTEXT		16777215
+		LONGTEXT		4294967295 Characters
+		TENYBLOB		255 Bytes
+		BLOB	Size	65535 Bytes
+		MEDIUMBLOB		16777215 Bytes
+		LONGBLOB		4294967295 Bytes
+		ENUM	Val1,val2,……	…….65535
+		SET	Val1,val2,……	…….64
+Number data types
+unsigned (only positive)
+signed (both positive and negative)
+Note:
+0 false	1 true     (bool and Boolean)
+		BIT	Size	1-64
+		TINYINT	Size	-128-127
+		INT	Size	-2147483648-2147483648
+		INTERGER	Size	∞
+		SMALLINT	Size	-32768-32767
+		MEDIUMINT	Size	-8388608-8388607
+		BIGINT	Size	-9223372036854775808-9223372036854775808
+		BOOL		
+		BOOLEAN		0/1
+		FLOAT	(P)	
+		DOUBLE	(size, d)	255.568
+		DECIMAL	(size, d)	Size = 60, d = 30	Size.d
+		DEC	(size, d)		88.5
+				
+
+Date data types:
+		Date		1000-01-01  -   9999-12-31
+		Datetime	(fsp)	yyyy-mm-dd  hh:mm:ss
+		Timestamp	(fsp)	
+		Time	(fsp)	hh:mm:ss
+		Year		four-digit formate : 1901
+
+Create a table:
+CREATE TABLE users
+(
+id int unsigned,
+name varchar(100),
+email varchar(150),
+password varchar(100),
+contact varchar(15),
+address text,
+dob date,
+gender Enum("M","F","O")
+)
+
+ 
+Add Data Into table using the Insert Query.
+Insert single row
+INSERT INTO table_name
+(column1,column2,column3,…)
+VALUES
+(value1,value2,value3…);
+	
+	Use style ←↑	save and the pass.
+INSERT INTO users	------------------(third case if you add all data then don’t worry given “” unhighlight data””) 
+(id,name,email,password,conatct,address,dob,gender)
+VALUES
+(1,"Nivesh","nivesh@gmail.com","niv@12","+916666666666","xxxBokaro","2002-10-27",M") ,
+Insert multiple rows
+INSERT INTO table_name
+(colums1, columns2,columns3,…)
+VALUES
+(value1,value2,value3,…),
+(value1,value2,value3,…),
+(value1,value2,value3,…);
+	Plz check on internet 
+
+
+
+Select query with where Clouse:
+Select Query
+use style
+SELECT * FROM style.users; 
+SELECT id,name,conatct,address from users
+
+SELECT id,name as "student name",conatct,address from users		(you can create Elease name as "student name"
+select * from users –(if you want all data to use this)
+Where clause
+The WHERE clause is used to Filter records.
+It is used to extract only those records that fulfill a specified condition.
+Syntax:
+SELECT column1, column2,…
+FROM table_name
+WHERE condition
+Condition: Basic
+= 	equals
+! =	not equals
+>=	greater than or equals
+<= less than or equals
+
+	select * from users WHERE id > 1;		-(also you can use inside the table value like data[Nivesh])
+MySQL constraints:
+	NOT NULL
+	UNIQUE
+	DEFAULT
+	CHECK
+	FOREGIN KEY
+	PRIMARY KEY 			- (upcoming chapters) 
+VALIDATION 
+Client > Server > Database
+create table students
+(
+id int not null unique,
+name varchar (100) not null,
+email varchar (150) not null unique,
+age tinyint check (age >= 18),
+status boolean default 1
+)
+Commands: And, or & Not Operator:
+And Operator: 
+MySQL logical and operator compares two expressions and returns true if both of the expressions are true.
+select * from students
+where age >=18 And age <=25
+Or Operator: 
+MySQL Or Operator compares two expressions and returns TRUE if either of the expressions is TRUE.
+select * from students
+where age = "19" or age = "25"
+Not Operator: 
+MySQL NOT Operator reverses or negates the input.
+select * from students
+where not age = "19" and not age = "25"
+SYNTAX
+SELECT * FROM table_name
+WHERE
+Column1 AND Column2
+
+ IN Operator on Database Table:
+The IN OPERATOR allows you to specify multiple value in a WHERE clause.
+The IN OPERATOR is a shorthand for multiple or conditions.
+SLECT * FROM table_name
+WHERE column_name IN
+(value1,value,….);
+select * from students where age in(19,20,25)
+LIKE Operator and Wildcard
+SELECT * FROM users WHERE name LIKE “S%”
+The LIKE Operator is used in a WHERE Clause to search for a specified pattern in a column.
+	The percent sign (%) represent zero, one, or multiple characters.
+	The underscore sign (_) represents one, single characters. 
+select * from students where name like "N%"
+
+Like Operator 	Description
+Like ‘a%’	Start with “a”
+Like ‘%a’	End with “a”
+Like ‘%or%’	Have “or” in any position
+Like ‘_r%’	Have “r” in the second Position
+Like ‘a_%’	Start with “a” and are at least 2 characters in length. _
+Like ‘a__%’	Start with “a” and are at least 3 characters in length. _ _
+Like ‘a%o’	Start with “a” and ends with “o”.
+Between and Not Between Operators:
+Syntax:
+	SELECT * FROM students WHERE age 
+BETWEEN Val1 And Val2
+	SELECT * FROM student WHERE age 
+NOT BETWEEN Val1 AND Val2
+
+Select * from users Where age between “20” and “25”
+Order By Distinct:
+Order By
+Syntax:
+SELECT * FROM table_name ORDER BY column ASC / DESC
+(notes: ASC = Ascending / DSC = Descending)
+select * from students order by name ASC
+Distinct:
+select distinct age from students
+IS NULL and IS NOT NULL Operators:
+Syntax:
+SELECT * FROM table_name WHERE column IS NULL / IS NOT NULL.
+LIMIT AND OFFSET:
+LIMIT
+If want to LIMIT, the number of result that are returned you can simply use the limit command with several rows to LIMIT by.
+Syntax:
+SELECT * FROM <table_name> LIMIT [Number to limit By];
+select * from students limit 4			-where we can use multiple Clouse
+OFFSET
+	You can also specify an OFFSET from where to start returning data.
+Syntax:
+SLECT * FROM <table_name>
+LIMIT 5 OFFSET [Number of rows to skip]
+	select * from students limit 5 offset 2
+
+Aggregate Functions: SUM, MIN, MAX & AVG………
+COUNT ( )	Return the number of rows in database table.	select count(id) from students where fee >1000;
+SUM ( )	Return the total sum of a numeric column.	select sum(fee) from students;
+AVG ( )	Calculates the average of a set of values.	select avg(fee) from students;
+MIN ( )	Return the lowest value (minimum) in a set of non-NULL values.	select min(fee) from students;
+MAX ( )	Return the greatest value (maximum) in a set of non-NULL values.	select max(fee) from students;
+
+Update statement
+Update you data .
+First you have to Setting update and apply
+PK = Primary Key
+AI = Auto Increment  
+ 
+update students set age = 20 where id =2;		-(where you have to mention proper data like that)
+Delete Query
+Syntax:
+DELETE FROM table_name [WHERE Clause]
+delete from students where id =10;			-(next try use IN)
+Commit & Rollback
+Transition 
+Start > CURD/  > Commit (if any substances the data is wrong the you will rollback your data) > Rollback
+ 
+update students set fee = 800 where id = 1;
+rollback;						-(rollback stand for go back to previous data)
+
+update students set fee = 800 where id = 1;
+commit;						-(commit stand for final there will be no further changes)
+Primary key and Foreign Key
+Primary key
+Primary key always contains unique data.
+It cannot be null.
+There must be a single primary key.
+	Syntax:
+	CREATE TABLE students (
+	Id INT NOT NULL AUTO_INCREMENT,
+Name VARCHAR (50) NOT NULL,
+Age INT NOT NULL,
+City VARCHAR (10) NOT NULL,
+PRIMARY KEK (id)
+)
+Foreign Key
+	The foreign key is used to link two tables.
+	A foreign key in one table (child table) is used to point PRIMARY KEY in another table (parent table)
+	Syntax:
+	CREATE TABLE students (
+	Id INT NOT NULL AUTO_INCREMENT,
+Name VARCHAR (50) NOT NULL,
+Age INT NOT NULL,
+City int NOT NULL,
+PRIMARY KEK (id)
+FOREIGN KEY (city) REFERENCES city (id)
+)
+
+-- Create the 'cities' table
+CREATE TABLE cities (
+    city_id INT PRIMARY KEY,     -- Primary key in the 'cities' table
+    city_name VARCHAR(100) NOT NULL
+);
+
+-- Create the 'students' table
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,  -- Primary key in the 'students' table
+    student_name VARCHAR(100) NOT NULL,
+    city_id INT,                 -- Foreign key column
+    FOREIGN KEY (city_id) REFERENCES cities(city_id
+);
+Inner join command
+What is MYSQL inner join?
+The MySQL inner join is used to return only those result from the tables that match the specified condition and hides other rows and Columns.
+MySQL assumes it as a default join, so it is optional to use the inner join keyword with the query.
+	Syntax:
+	Select columns
+	From table1
+	Inner join table2 on condition1	
+			
+select * from students
+inner join cities
+on students.city_id = cities.city_id;
+
+what is MySQL left Join?
+The MySQL LEFT join keyword return all records from the left table (table 1), and the matched records from the right table (table 2).
+ Syntax:
+SELECT colums_name(s)
+FROM table1
+LEFT JOIN table
+On
+Table1.column_name = table2.column_name
+
+select * from students
+ left join cities
+ on students.city_id = cities.city_id	
+
+what is MYSQL Right join?
+The RIGHT JOIN keyword return all records from the right table (table2), and the records from the left table (table1).
+	Syntax:
+	SELECY column_name(s)
+	From table1
+	Right join table 2
+	On
+	Table1.coumn_name = table2.column_name
+	
+select * from students
+right join cities
+on 
+students.city_id = cities.city_id;
+what is cross join?
+The MySQL CROSS JOIN produces a result set which is the number of rows in the first table multiple by number of rows in the second table if no where clause is used along with Cross Join.
+This kind of result is called as Cartesian product.
+SELECT Column_name(s)
+FROM table1
+CROSS JOIN table2
+ON table1.column_name = table2.column_name;
+
+Join Multiple Table
+	Syntax:		
+	SELECT column_name(S)
+	FROM table1
+	INNER JOIN table2
+	On table1.column_name = table2.column_name;
+	INNER JOIN table2 
+	On table1.column_name =  table2.column_name;
+SELECT *
+FROM nivesh.students s
+INNER JOIN cities c
+    ON s.city_id = c.city_id
+INNER JOIN course cr
+    ON s.student_id = cr.student_id;	
+
+Group By & Having Clause
+	Group By:
+Syntax:	
+SELECT column_name(s)
+FROM table1
+WHERE column  GROUP BY column_name(s)
+SELECT class, COUNT(student_id) AS student_count
+FROM students
+GROUP BY class;
+
+SELECT students.class, cities.city_name, COUNT(students.student_id) AS student_count
+FROM students
+INNER JOIN cities
+ON students.student_id = cities.city_id
+GROUP BY students.class, cities.city_name;
+	
+	Having Clause:
+	Syntax:	
+SELECT column_name(s)
+FROM table1
+WHERE column 
+having column_name(s)
+SELECT students.class, cities.city_name, COUNT(students.student_id) AS student_count
+FROM students
+INNER JOIN cities
+ON students.student_id = cities.city_id
+GROUP BY students.class, cities.city_name
+HAVING COUNT(students.student_id) = 1;
+Sub Query with EXISTS & NOT EXIST
+	Sub Query:
+	Syntax:	
+	SELECT column_name(s)
+	FROM table1
+	WHERE
+	(SELECT column_name from table2)
 
