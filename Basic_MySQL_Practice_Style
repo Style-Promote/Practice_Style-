@@ -58,6 +58,74 @@ select concat("address","address 2","district","city_id","postal_code") as full_
 #Concatenate------------concat_ws()
 select concat_ws(" - ","address","address 2","district","city_id","postal_code") as full_address from sakila.address
 
+#length of the data
+select length (Name) as name_count from city;
+
+#Change the Case to Uppercase
+select upper(Name) as Upper_case from city;
+
+#Change the Case to Lowercase
+select lower(Name) as Lower_case from city;
+
+#left
+select left(Name,2)as two_word_name_left from city;
+#right
+select right(Name, 2) as two_word_name_right from city;
+#mid
+select mid(Name, 3) as two_word_name_mid from city;
+
+#Data Aggregation Numeric Function
+#sum
+select sum(Population) as total_population from world.city;
+#count
+select count(ID) as count_Id from world.city;
+#max
+select max(Population) as Max_value from world.city;
+#min
+select min(Population) as Min_value from world.city;
+#truncate
+select truncate(amount, 0) as Amounts from sakila.Payment;   #when you have to remove decimal value
+#ceil
+select ceil(amount) as point_to_increase from sakila.payment;  #when you have to increase the value point to one 0.0>1
+#floor
+select floor(amount) as floor_ from sakila.payment;
+
+#Data Function
+#Date
+select date(payment_date) as dates from sakila.payment;      #if data is look like 2005-05-25 11:30:37 that and you want only date
+#time
+select time(payment_date) as times from sakila.payment;
+#different day
+select datediff(last_update,payment_date) as diff_day from sakila.payment;     #diff_day
+#day
+select day(payment_date) as days from sakila.payment;
+#day name
+select dayname(payment_date) as day_name from sakila.payment;
+#month
+select month(payment_date) as month from sakila.payment;
+#month name
+select monthname(payment_date) as month_name from sakila.payment;
+#year
+select year(payment_date) as years from sakila.payment;
+#hours
+select hour(payment_date) as hours from sakila.payment;
+#minutes
+select minute(payment_date) as minutes from sakila.payment;
+
+Case operators
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
