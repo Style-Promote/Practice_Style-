@@ -137,6 +137,47 @@ select rating, count(title) as films from sakila.film group by rating;
 
 #Join
 #Inner
+#Left
+#Right
+#Cross
+
+#Inner				#common foreign key Data matched should be come.
+	select
+	actor_id, 
+	full_name, 
+	count(title) as count_movie
+	from 
+	(select film_actor.actor_id, film.title, concat(first_name,"_",last_name) as full_name from film_actor
+	inner join film
+	on film_actor.film_id = film.film_id
+	inner join actor
+	on film_actor.actor_id = actor.actor_id)
+	as asign_actor
+	group by 
+	actor_id,full_name;
+#Left join			#Left table hole data and right common data.
+	select * from actor
+	left join film_actor
+	on actor.actor_id = film_actor.actor_id;
+#right join			#right table hole data and lift common data.
+	select * from actor
+	right join film_actor
+	on actor.actor_id = film_actor.actor_id;
+#cross join			#All common and non common data both table.
+	select * from actor
+	cross join film_actor
+	on actor.actor_id = film_actor.actor_id;
+
+#Set operators
+#union
+	select film_id,title from film
+	union
+	select film_id,last_update from film_actor
+#union all
+	select film_id,title from film
+	union all
+	select film_id,last_update from film_actor
+
 
 
 
