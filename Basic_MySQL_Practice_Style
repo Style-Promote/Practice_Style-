@@ -112,10 +112,31 @@ select hour(payment_date) as hours from sakila.payment;
 #minutes
 select minute(payment_date) as minutes from sakila.payment;
 
-Case operators
+#Case operators
+#case
+select payment_id,customer_id,amount,
+case
+	when amount < 1 then "Less_Amount"
+    when amount < 4 then "Avg_Amount"
+    else "Great_Amount"
+    end as Amounts
+from sakila.payment                # when you use criteria for coloumn like IF in Excel
 
+#Group by
+select * from sakila.film;
+select rating, count(title) as films from sakila.film group by rating;
 
+#Having Clouse
+#it an alternative of where clouse if allready use some group by something like in the case use "Having".
+#Having
+1    select * from sakila.film;
+     select rating,count(title) as films from sakila.film group by rating having films >= 150;
 
+2    select * from sakila.film;
+    select rating,count(title) as films from sakila.film where rating="PG" group by rating having films >= 150;
+
+#Join
+#Inner
 
 
 
