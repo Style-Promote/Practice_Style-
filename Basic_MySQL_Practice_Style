@@ -217,6 +217,15 @@ Be Remember learned Intersect, Except,
 	BEGIN
 	select * from sakila.film where film.release_year=2006;
 	END
+
+	delimiter &&
+	create Procedure niv()
+	begin
+		select * from sakila.customer;
+	end &&
+	delimiter ;
+	
+	call niv()
 #Stored procedure in MySQL
 #In
 	CREATE DEFINER=`root`@`localhost` PROCEDURE `nivesh`(in rental_ int)
@@ -224,6 +233,12 @@ Be Remember learned Intersect, Except,
 	select * from sakila.film where film.release_year=release_year;
 	END
 #Out
+
+
+#InOut
+
+
+#functions
 
 
 
